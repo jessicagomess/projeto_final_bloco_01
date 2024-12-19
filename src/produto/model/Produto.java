@@ -1,6 +1,6 @@
 package produto.model;
 
-public class Produto {
+public abstract class Produto {
 
     private int id;
     private String nome;
@@ -63,4 +63,9 @@ public class Produto {
         return "Produto [ID=" + id + ", Nome=" + nome + ", Categoria=" + categoria + ", Quantidade=" + quantidade
                 + ", Preço=R$ " + preco + "]";
     }
+
+	public void exibirDetalhes() {
+		
+		
+	}
 }
