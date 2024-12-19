@@ -2,13 +2,15 @@ package produto;
 
 import java.util.Scanner;
 
+import produto.controller.ProdutoController;
+
 public class Menu {
 
 	public static void main(String[] args) {
 
 		Scanner leia = new Scanner(System.in);
-
-		int opcao;
+        ProdutoController controller = new ProdutoController();
+        int opcao;
 
 		while (true) {
 
@@ -39,10 +41,19 @@ public class Menu {
 			}
 
 			switch (opcao) {
-				case 1:
-					System.out.println("Cadastrar Produto\n\n");
-
-					break;
+			System.out.print("Nome do Produto: \n");
+            String nome = leia.nextLine();
+            System.out.print("Preço do Produto: \n");
+            double preco = leia.nextDouble();
+            leia.nextLine(); 
+            System.out.print("Categoria do Produto: \n");
+            String categoria = leia.nextLine();
+            System.out.print("Quantidade do Produto: \n");
+            int quantidade = leia.nextInt();
+            leia.nextLine();  // Limpar o buffer de entrada
+            ProdutoAlimenticio produto = new ProdutoAlimenticio(1, nome, categoria, quantidade, preco, "10/12/2024");
+            controller.cadastrarProduto(produto);
+            break;
 				case 2:
 					System.out.println("Listar Produtos\n\n");
 
